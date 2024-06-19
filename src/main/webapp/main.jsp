@@ -11,16 +11,33 @@
 <head>
 <meta charset="UTF-8">
 <title>main.jsp</title>
+<link rel="stylesheet" type="text/css" href="css/board.css" />
+
 </head>
 <body>
-<%
-	//String memberId = request.getParameter("memberId");
-%>
-	<h3>여기는 main.jsp</h3>	
-	<c:if test="${not empty sessionScope.member }">
-		환영합니다. <span style="color: blue;">${sessionScope.member.memberId }님</span>
-		<br>
-		<a href="${contextPath}/board">게시물 등록</a>
-	</c:if>
+<div class="container">
+		<header class="header">
+            <nav>
+                <a href="#">회원제 게시판</a>
+            </nav>
+            <div class="user-info">
+                <c:if test="${not empty sessionScope.member}">
+                    <p>${sessionScope.member.name} 님</p>
+                    <a href="${contextPath}/logout">Logout</a>
+                </c:if>
+                <c:if test="${empty sessionScope.member}">
+                    <a href="${contextPath}/login">Login</a>
+                </c:if>
+            </div>
+        </header>
+		<main>
+			<h3>여기는 main.jsp</h3>	
+			<c:if test="${not empty sessionScope.member }">
+				<a href="${contextPath}/board">게시물 등록</a>
+			</c:if>
+			<br>
+			<a href="${contextPath}/boardList">게시물 목록</a>
+		</main>
+	</div>	
 </body>
 </html>

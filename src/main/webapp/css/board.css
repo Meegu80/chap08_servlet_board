@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: orange;
+    margin: 0;
+}
+nav {
+    flex-grow: 1;
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.user-info {
+    margin-right: 20px;
+}
+.user-info p {
+    display: inline;
+    margin-right: 10px;
+}
+main {
+	width: 50%;
+    margin: 5px 5px 0 5px; /* 상단 마진 5px 추가 */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f8f8f8;
+}
